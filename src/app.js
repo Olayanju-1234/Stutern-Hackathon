@@ -27,7 +27,7 @@ routes(app);
 
 // routes does not exist yet
 app.use("*", (req, res) => {
-    res.status(404).json({ error: "not found" });
+    res.status(404).json({ error: "sorry, wrong url" });
 }
 );
 
