@@ -17,6 +17,8 @@
   "bugs": {
     "url": "https://github.com/Olayanju-1234/Stutern-Hackathon/issues"
   },
+  "engines": {
+    "node": "16.x"},
   "homepage": "https://github.com/Olayanju-1234/Stutern-Hackathon#readme",
   "dependencies": {
     "body-parser": "^1.20.2",
