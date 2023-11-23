@@ -1,7 +1,8 @@
 // Reminder model
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import { Schema as _Schema } from 'mongoose';
+import mongoose from 'mongoose';
+const Schema = _Schema;
 
 const reminderSchema = new Schema({
     user : {
@@ -23,3 +24,7 @@ const reminderSchema = new Schema({
 }, {
     timestamps : true,
 });
+
+const Reminder = mongoose.model('Reminder', reminderSchema);
+
+export default Reminder;

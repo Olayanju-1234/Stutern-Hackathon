@@ -1,4 +1,4 @@
-const dotenv = require("dotenv");
+import dotenv from 'dotenv';
 dotenv.config();
 
 const config = {
@@ -7,7 +7,9 @@ const config = {
     MONGO_DB_URL: process.env.MONGO_DB_URL,
     NODE_ENV: process.env.NODE_ENV,
     PORT: process.env.PORT,
-  };
-  
-module.exports = config;
-  
+    JWT_SECRET: process.env.JWT_SECRET,
+    SALT_LENGTH: process.env.SALT_LENGTH,
+    SALT_TOKEN: process.env.SALT_TOKEN,
+};
+
+export default config;

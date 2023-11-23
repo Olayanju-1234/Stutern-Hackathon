@@ -1,7 +1,8 @@
 // User model
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import { Schema as _Schema } from 'mongoose';
+import mongoose from 'mongoose';
+const Schema = _Schema;
 
 const userSchema = new Schema({
     firstName : {
@@ -14,17 +15,15 @@ const userSchema = new Schema({
         required : true,
         trim : true,
     },
-    username : {
-        type : String,
-        required : true,
-        unique : true,
-        minlength : [3, 'Username must be at least 3 characters.']
-    },
     email : {
         type : String,
         required : true,
         unique : true,
         trim : true,
+    },
+    phone : {
+        type : String,
+        required : true,
     },
     password : {
         type : String,
@@ -35,16 +34,13 @@ const userSchema = new Schema({
         type : String,
     },
     age : {
-        type : Number,
-        required : true,
+        type : Number
     },
     gender : {
         type : String,
-        required : true,
     },
     picture : {
         type : Object,
-        required: false,
     },
 
 }, {
@@ -53,5 +49,5 @@ const userSchema = new Schema({
 
 const User = mongoose.model('User', userSchema);
 
-module.exports = User;
+export default User;
 

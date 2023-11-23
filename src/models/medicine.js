@@ -1,7 +1,8 @@
 //  User medicine & schedule model
 
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import { Schema as _Schema } from 'mongoose';
+import mongoose from 'mongoose';
+const Schema = _Schema;
 
 const medicineSchema = new Schema({
     user : {
@@ -47,4 +48,7 @@ const medicineSchema = new Schema({
     timestamps : true,
 });
 
+const Medicine = mongoose.model('Medicine', medicineSchema);
+
+export default Medicine;
 

@@ -1,7 +1,8 @@
-const express = require('express');
-const cors = require('cors');
-const morgan = require('morgan');
-const config = require('./config/env');
+import express from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import config from './config/env.js';
+import routes from './routes/index.js';
 
 const { NODE_ENV } = config;
 
@@ -22,10 +23,12 @@ app.get('/', (req, res) => {
 }
 );
 
+routes(app);
+
 // routes does not exist yet
 app.use("*", (req, res) => {
     res.status(404).json({ error: "not found" });
 }
 );
 
-module.exports = app;
+export default app;

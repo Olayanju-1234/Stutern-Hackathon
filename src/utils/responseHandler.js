@@ -13,7 +13,7 @@ const ErrorResponse = (res, message, statusCode) => {
     });
 };
 
-module.exports = {
+export {
     SuccessResponse,
     ErrorResponse,
 };
