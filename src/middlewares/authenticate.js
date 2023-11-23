@@ -1,6 +1,7 @@
 import config from "../config/env.js";
-import ErrorResponse from "../utils/responseHandler.js";
-const { verify } = require("jsonwebtoken");
+import {ErrorResponse} from "../utils/responseHandler.js";
+import pkg from "jsonwebtoken";
+const { verify } = pkg;
 
 const { JWT_SECRET } = config;
 
@@ -49,4 +50,4 @@ function extractTokenFromRequest(req) {
 //   return next();
 // };
 
-module.exports = { auth, isEmailVerified };
+export { auth };

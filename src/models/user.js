@@ -1,10 +1,8 @@
 // User model
 
-import { Schema as _Schema } from 'mongoose';
 import mongoose from 'mongoose';
-const Schema = _Schema;
 
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
     firstName : {
         type : String,
         required : true,
@@ -38,6 +36,9 @@ const userSchema = new Schema({
     },
     gender : {
         type : String,
+    },
+    dateOfBirth : {
+        type : Date,
     },
     picture : {
         type : Object,
