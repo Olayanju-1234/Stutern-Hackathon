@@ -10,6 +10,9 @@ const config = {
     JWT_SECRET: process.env.JWT_SECRET,
     SALT_LENGTH: process.env.SALT_LENGTH,
     SALT_TOKEN: process.env.SALT_TOKEN,
+    EMAIL_USERNAME: process.env.EMAIL_USERNAME,
+    EMAIL_HOST: process.env.EMAIL_HOST,
+    EMAIL_PASSWORD: process.env.EMAIL_PASSWORD
 };
 
 export default config;

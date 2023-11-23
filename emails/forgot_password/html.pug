@@ -1,0 +1,12 @@
+extends ../includes/layout.pug
+
+block content
+  .main
+    .content
+      p Hi #{name},
+      p Someone has requested a link to change your password. You can do this through the link below. This link will expire in an hour.
+      a.btn(href=`#{url}`) Reset Password
+      p If you didn't request this, please ignore this email.
+      p Thanks,
+      br
+      | The #{app_name} team

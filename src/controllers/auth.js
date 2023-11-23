@@ -1,5 +1,6 @@
 import AuthSignup from '../services/user/auth/signup.js';
 import AuthSignin from '../services/user/auth/signin.js';
+import ForgotPassword from '../services/user/auth/forgotpassword.js';
 import { SuccessResponse, ErrorResponse } from '../utils/responseHandler.js';
 
 const AuthSignupController = async (req, res) => {
@@ -31,7 +32,24 @@ const AuthSigninController = async (req, res) => {
     }
 }
 
+const ForgotPasswordController = async (req, res) => {
+    const { email } = req.body;
+
+    try {
+        const response = await ForgotPassword(email);
+
+        return SuccessResponse(res, response, 'Password reset link sent successfully');
+    }
+    catch (error) {
+        if (error.message === "User not found") {
+            return ErrorResponse(res, error.message, 404);
+        }
+        return ErrorResponse(res, error.message);
+    }
+}
+
 export { 
     AuthSignupController,
     AuthSigninController,
+    ForgotPasswordController
  };
