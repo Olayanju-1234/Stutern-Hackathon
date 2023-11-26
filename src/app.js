@@ -10,7 +10,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: ['http://localhost:3000', 'https://klusterhon.onrender.com'],
+        origin: ['http://localhost:8081', 'https://klusterhon.onrender.com'],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
     })
 );
