@@ -12,7 +12,6 @@ app.use(
     cors({
         origin: ['http://localhost:3000', 'https://klusterhon.onrender.com'],
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type', 'Authorization'],
     })
 );
 
