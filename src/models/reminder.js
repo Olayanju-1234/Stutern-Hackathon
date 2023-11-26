@@ -9,7 +9,7 @@ const reminderSchema = new Schema({
         type : Schema.Types.ObjectId,
         ref : 'Medicine',
     },
-    status : {
+    isTaken : {
         type : Boolean,
         default : false,
     },
