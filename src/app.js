@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import config from './config/env.js';
 import routes from './routes/index.js';
+import errorHandler from './middlewares/errorHadler.js';
 
 const { NODE_ENV } = config;
 
@@ -33,5 +34,7 @@ routes(app);
 app.use('*', (req, res) => {
     res.status(404).json({ error: 'sorry, wrong url' });
 });
+
+app.use(errorHandler);
 
 export default app;
