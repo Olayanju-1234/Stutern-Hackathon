@@ -11,7 +11,7 @@ const SendEmail = async ({
   template,
   to,
   locals,
-  sender_name = "Medicare",
+  sender_name = "My MED",
   attachments = [],
 }) => {
   const email = new Email({
@@ -38,7 +38,7 @@ const SendEmail = async ({
     ...locals,
     year: currentYear,
     support_email: config.EMAIL_USERNAME,
-    app_name: "Medicare",
+    app_name: "My MED",
   };
 
   try {
