@@ -11,7 +11,7 @@ const router = Router();
 
 router.post('/schedule', auth, ScheduleMedicineController);
 router.post('/add', auth, UpdateMedicDetailsController);
-router.post('/reminder', auth, CreateReminderController);
+router.post('/reminder/:medicineId', auth, CreateReminderController);
 router.get('/medicines', auth, GetAllUserMedicinesController);
 
 export default router;
