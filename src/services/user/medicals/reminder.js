@@ -9,7 +9,7 @@ const CreateReminder = async (userId, medicineId, data) => {
             throw new Error('Medicine not found');
         }
 
-        const reminder = await Reminder.create({ ...data });
+        const reminder = await Reminder.create({ ...data, medicine: medicineId });
 
         return reminder;
     } catch (error) {
